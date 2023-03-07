@@ -1,0 +1,85 @@
+body.no-scroll { overflow: hidden; pointer-events: none;}
+.modal__wrapper { pointer-events: all; }
+.modal__wrapper {
+ display: none;
+ position: fixed;
+ width: 100%;
+ height: 100vh;
+ z-index:1000;
+}
+.modal__overlay {
+ position: relative;
+ z-index: 1;
+ width: 100%;
+ height: 100%;
+ background-color:rgba(000,000,000,0.8);
+ padding: 30px 5%;
+ cursor: pointer;
+}
+.modal__inner {
+position: absolute;
+left: 50%;
+top: 50%;
+z-index: 2;
+transform: translate(-50%,-50%);
+width: 600px;
+min-height: 25%;
+max-width: 85%;
+max-height: 95%;
+background-color: #FFF;
+}
+ .modal__inner > div {
+  z-index: 1;	
+ }
+ .modal-close {
+ position: absolute;
+ right: 0;
+ top:0;
+ transform: translate(40% , -40%);
+ background-color: #FFF;
+ width: 36px;
+ display: block;
+ height: 36px;
+ border-radius : 50%;
+ z-index: 2;
+ border: none;
+ cursor: pointer;
+ box-shadow: 0 5px 10px 0 rgba(000, 000, 000, 0.2);
+ }	
+ .modal-close:before , .modal-close:after  {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 3px;
+  background-color: #000;
+  position: absolute;
+  left: 50%;
+  top:50%;
+ }
+ .modal-close:before {transform: translate(-50%,-50%) rotate(45deg); }
+ .modal-close:after {transform: translate(-50%,-50%) rotate(-45deg); }
+.modal-open {
+ display: table;
+ padding: .5em;
+ cursor: pointer;
+}
+
+
+/*オープン後の動き*/
+.modal__wrapper.active {
+ display: block;
+ opacity: 1;
+ animation: fadeIn 0.3s ease-in 0s forwards;
+}
+
+button[data-modaltrigger] , a[data-modaltrigger] {
+ cursor: pointer;
+}
+
+
+
+@keyframes fadeIn {
+ 0% { display: none; opacity: 0; }
+ 1% { display: block; opacity: 0; }
+ 100% { display: block; opacity: 1; }
+}
