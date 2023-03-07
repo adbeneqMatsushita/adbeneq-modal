@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<title>モーダル</title>
+<link href="common.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="mObjects1" class="modal__wrapper" data-modalWrapper>
+ <div class="modal__overlay" tabindex="-1" data-closemodal></div>
+ <div role="dialog" aria-modal="true" class="modal__inner">
+ <div role="document">
+<!-- ここから -->
+内容が入ります。（1）
+<!-- ここまで -->
+ </div>
+  <button class="modal-close" data-closemodal aria-label="モーダルを閉じます。Escキーでも閉じることができます。"  title="閉じるボタン"></button>
+ </div>
+</div>	
+<div id="mObjects2" class="modal__wrapper" data-modalWrapper>
+ <div class="modal__overlay" tabindex="-1" data-closemodal></div>
+ <div role="dialog" aria-modal="true" class="modal__inner">
+ <div role="document">
+<!-- ここから -->
+内容が入ります。（2）
+<!-- ここまで -->
+ </div>
+  <button class="modal-close" data-closemodal aria-label="モーダルを閉じます。Escキーでも閉じることができます。"  title="閉じるボタン"></button>
+ </div>
+</div>	
+
+<button onClick="modalActions('mObjects1')" data-modaltrigger>TEST1</button>	
+<button onClick="modalActions('mObjects2')" data-modaltrigger>TEST2</button>		
+<script src="modal.js" type="text/javascript"></script>
+	
+<script>
+modalActions('mObjects1');	
+</script>	
+	
+</body>
+</html>
